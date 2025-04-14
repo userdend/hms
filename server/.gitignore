@@ -1,0 +1,36 @@
+# Composer directories and files
+vendor/
+composer.lock
+
+# Slim Framework cache and logs
+var/
+logs/
+
+# Environment file
+.env
+
+# Docker files (if you have sensitive information like secrets in them)
+docker-compose.override.yml
+.env.local
+*.env
+
+# IDE/editor files
+.idea/
+.vscode/
+
+# PHPUnit and code coverage
+phpunit.xml
+phpunit.xml.dist
+
+# Node.js (if you're using Node.js for assets or tools)
+node_modules/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# PHPStorm specific
+.phpstorm/
+
+# Ignore compiled files or cache directories
+cache/
