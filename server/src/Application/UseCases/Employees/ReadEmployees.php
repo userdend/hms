@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Application\UseCases;
+namespace App\Application\UseCases\Employees;
 
 use App\Domain\Repositories\EmployeeRepositoryInterface;
 
-class DeleteEmployee
+class ReadEmployees
 {
     public function __construct(private EmployeeRepositoryInterface $employeeRepository)
     {
     }
 
-    public function execute($id)
+    public function execute()
     {
-        return $this->employeeRepository->delete($id);
+        return $this->employeeRepository->all();
     }
 }
