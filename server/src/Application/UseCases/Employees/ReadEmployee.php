@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Application\UseCases;
+namespace App\Application\UseCases\Employees;
 
 use App\Domain\Repositories\EmployeeRepositoryInterface;
 
-class UpdateEmployee
+class ReadEmployee
 {
     public function __construct(private EmployeeRepositoryInterface $employeeRepository)
     {
     }
 
-    public function execute($id, array $data)
+    public function execute($id)
     {
-        return $this->employeeRepository->update($id, $data);
+        return $this->employeeRepository->find($id);
     }
 }

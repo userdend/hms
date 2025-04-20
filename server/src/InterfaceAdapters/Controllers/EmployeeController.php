@@ -4,7 +4,7 @@ namespace App\InterfaceAdapters\Controllers;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use App\Application\UseCases\{
+use App\Application\UseCases\Employees\{
     CreateEmployee,
     ReadEmployees,
     ReadEmployee,
