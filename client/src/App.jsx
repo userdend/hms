@@ -12,9 +12,10 @@ import "./App.css";
 import Login from "./features/auth/components/Login";
 import Dashboard from "./features/dashboard/components/Dashboard";
 import HomePage from "./features/dashboard/components/HomePage";
-import Employees from "./features/employees/Employees";
-import List from "./features/employees/components/List";
-import Salaries from "./features/employees/components/Salaries";
+import EmployeePage from "./features/employees/EmployeePage";
+import EmployeeList from "./features/employees/components/EmployeeList";
+import EmployeeAdd from "./features/employees/components/EmployeeAdd";
+import EmployeeDetails from "./features/employees/components/EmployeeDetails";
 
 const App = () => {
   return (
@@ -23,9 +24,10 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<HomePage />} />
-          <Route path="employees" element={<Employees />}>
-            <Route index element={<List />} />
-            <Route path="salaries" element={<Salaries />} />
+          <Route path="employees" element={<EmployeePage />}>
+            <Route index element={<EmployeeList />} />
+            <Route path="add" element={<EmployeeAdd />} />
+            <Route path="view/:id" element={<EmployeeDetails />} />
           </Route>
         </Route>
       </Routes>
