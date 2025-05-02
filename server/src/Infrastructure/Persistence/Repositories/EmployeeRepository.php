@@ -9,12 +9,12 @@ class EmployeeRepository implements EmployeeRepositoryInterface
 {
     public function all()
     {
-        return Employee::all();
+        return Employee::where('e_status', 'active')->take(10)->get();
     }
 
     public function find($id)
     {
-        return Employee::find($id);
+        return Employee::with(['employeeEducation', 'employeeWorkExperience'])->find($id);
     }
 
     public function create(array $data)

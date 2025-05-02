@@ -4,14 +4,11 @@ import {
   Box,
   Flex,
   Heading,
-  Text,
   VStack,
   HStack,
-  Stack,
   Button,
   IconButton,
   useColorMode,
-  useColorModeValue,
   useDisclosure,
   Drawer,
   DrawerOverlay,
@@ -20,20 +17,12 @@ import {
   DrawerHeader,
   DrawerBody,
 } from "@chakra-ui/react";
-import {
-  Wrap,
-  WrapItem,
-  Avatar,
-  AvatarBadge,
-  AvatarGroup,
-} from "@chakra-ui/react";
 import { SiBurgerking } from "react-icons/si";
 import { FaHome } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
 
 const Dashboard = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const cardBg = useColorModeValue("gray.100", "gray.700");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -69,16 +58,6 @@ const Dashboard = () => {
             >
               Employees
             </Button>
-            <AvatarGroup size="sm" max={2}>
-              <Avatar name="Ryan Florence" src="https://bit.ly/ryan-florence" />
-              <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
-              <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
-              <Avatar
-                name="Prosper Otemuyiwa"
-                src="https://bit.ly/prosper-baba"
-              />
-              <Avatar name="Christian Nwamba" src="https://bit.ly/code-beast" />
-            </AvatarGroup>
           </HStack>
           <Button variant="ghost" color="white">
             Settings
@@ -114,7 +93,7 @@ const Dashboard = () => {
       </Drawer>
 
       {/* Main content area */}
-      <Box flex="1" p="6">
+      <Box flex="1" p="6" height={"100vh"} overflowY={"auto"}>
         <Flex justify="space-between" mb="4">
           <IconButton
             display={{ base: "inline-flex", md: "none" }}
