@@ -5,6 +5,9 @@ namespace App\Domain\Entities;
 use Illuminate\Database\Eloquent\Model;
 use App\Domain\Entities\EmployeeEducation;
 use App\Domain\Entities\EmployeeWorkExperience;
+use App\Domain\Entities\EmployeeFamily;
+use App\Domain\Entities\EmployeeEmergencyContact;
+use App\Domain\Entities\EmployeeBank;
 
 class Employee extends Model
 {
@@ -21,5 +24,20 @@ class Employee extends Model
     public function employeeWorkExperience()
     {
         return $this->hasMany(EmployeeWorkExperience::class, 'fk_employee');
+    }
+
+    public function employeeFamily()
+    {
+        return $this->hasMany(EmployeeFamily::class, 'fk_employee');
+    }
+
+    public function employeeEmergencyContact()
+    {
+        return $this->hasMany(EmployeeEmergencyContact::class, 'fk_employee');
+    }
+
+    public function employeeBank()
+    {
+        return $this->hasOne(EmployeeBank::class, 'fk_employee');
     }
 }

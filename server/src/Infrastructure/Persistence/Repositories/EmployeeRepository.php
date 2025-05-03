@@ -14,7 +14,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface
 
     public function find($id)
     {
-        return Employee::with(['employeeEducation', 'employeeWorkExperience'])->find($id);
+        return Employee::with(['employeeEducation', 'employeeWorkExperience', 'employeeFamily', 'employeeEmergencyContact', 'employeeBank'])->find($id);
     }
 
     public function create(array $data)

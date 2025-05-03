@@ -16,6 +16,7 @@ import EmployeePage from "./features/employees/EmployeePage";
 import EmployeeList from "./features/employees/components/EmployeeList";
 import EmployeeAdd from "./features/employees/components/EmployeeAdd";
 import EmployeeDetails from "./features/employees/components/EmployeeDetails";
+import BenefitList from "./features/manage/components/BenefitList";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="add" element={<EmployeeAdd />} />
             <Route path="view/:id" element={<EmployeeDetails />} />
           </Route>
+          <Route path="benefit" element={<BenefitList />} />
         </Route>
       </Routes>
     </BrowserRouter>

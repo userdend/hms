@@ -1,7 +1,13 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionIcon,
+  AccordionPanel,
   Box,
+  Collapse,
   Flex,
   Heading,
   VStack,
@@ -9,6 +15,7 @@ import {
   Button,
   IconButton,
   useColorMode,
+  useColorModeValue,
   useDisclosure,
   Drawer,
   DrawerOverlay,
@@ -39,6 +46,9 @@ const Dashboard = () => {
           Example Co. Ltd.
         </Heading>
         <VStack align="start" spacing="4">
+          <Heading size="xs" textTransform="uppercase">
+            Menu
+          </Heading>
           <Button
             leftIcon={<FaHome />}
             as={Link}
@@ -46,19 +56,31 @@ const Dashboard = () => {
             variant="ghost"
             color="white"
           >
-            Home
+            Dashboard
           </Button>
-          <HStack spacing={0}>
-            <Button
-              leftIcon={<IoIosPeople />}
-              as={Link}
-              to="/dashboard/employees"
-              variant="ghost"
-              color="white"
-            >
-              Employees
-            </Button>
-          </HStack>
+          <Button
+            leftIcon={<IoIosPeople />}
+            as={Link}
+            to="/dashboard/employees"
+            variant="ghost"
+            color="white"
+          >
+            Employees
+          </Button>
+          <Heading size="xs" textTransform="uppercase">
+            Manage
+          </Heading>
+          <Button
+            as={Link}
+            to="/dashboard/benefit"
+            variant="ghost"
+            color="white"
+          >
+            Benefit
+          </Button>
+          <Button variant="ghost" color="white">
+            Taxes
+          </Button>
           <Button variant="ghost" color="white">
             Settings
           </Button>

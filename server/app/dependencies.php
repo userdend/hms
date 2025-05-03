@@ -16,6 +16,9 @@ use App\Application\UseCases\ReadEmployees;
 use App\Application\UseCases\ReadEmployee;
 use App\Application\UseCases\UpdateEmployee;
 use App\Application\UseCases\DeleteEmployee;
+use App\Domain\Repositories\BenefitRepositoryInterface;
+use App\Infrastructure\Persistence\Repositories\BenefitRepository;
+use App\Application\UseCases\Benefits\ReadBenefits;
 
 return function (ContainerBuilder $containerBuilder) {
     $containerBuilder->addDefinitions([
@@ -61,6 +64,14 @@ return function (ContainerBuilder $containerBuilder) {
 
         DeleteEmployee::class => function (ContainerInterface $c) {
             return new DeleteEmployee($c->get(EmployeeRepositoryInterface::class));
-        }
+        },
+
+        BenefitRepositoryInterface::class => function () {
+            return new BenefitRepository;
+        },
+
+        ReadBenefits::class => function (ContainerInterface $c) {
+            return new ReadBenefits($c->get(BenefitRepositoryInterface::class));
+        },
     ]);
 };

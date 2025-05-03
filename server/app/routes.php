@@ -9,6 +9,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 use App\InterfaceAdapters\Controllers\EmployeeController;
+use App\InterfaceAdapters\Controllers\BenefitController;
 
 return function (App $app) {
     $app->options('/{routes:.*}', function (Request $request, Response $response) {
@@ -31,4 +32,6 @@ return function (App $app) {
     $app->post('/employees', [EmployeeController::class, 'store']);
     $app->put('/employees/{id}', [EmployeeController::class, 'update']);
     $app->delete('/employees/{id}', [EmployeeController::class, 'delete']);
+
+    $app->get('/benefits', [BenefitController::class, 'index']);
 };
