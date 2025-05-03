@@ -119,25 +119,71 @@ const EmployeeDetails = () => {
                   <Heading size="xs" textTransform="uppercase">
                     Family
                   </Heading>
-                  <Text pt="2" fontSize="sm">
-                    See a detailed analysis of all your business clients.
-                  </Text>
+                  {employee.employee_family &&
+                    employee.employee_family.map((family) => (
+                      <Box key={family.ef_id}>
+                        <Text pt="2" fontSize="sm">
+                          {family.ef_name}
+                        </Text>
+                        <Text pt="2" fontSize="sm">
+                          {family.ef_relationship}
+                        </Text>
+                        <Text pt="2" fontSize="sm">
+                          {family.ef_employed == 0 ? "Unemployed" : "Employed"}
+                        </Text>
+                        <Text pt="2" fontSize="sm">
+                          {family.ef_birthday}
+                        </Text>
+                        <Text pt="2" fontSize="sm">
+                          {family.ef_phone}
+                        </Text>
+                        <Text pt="2" fontSize="sm">
+                          {family.ef_address}
+                        </Text>
+                      </Box>
+                    ))}
                 </Box>
                 <Box>
                   <Heading size="xs" textTransform="uppercase">
                     Emergency Contact
                   </Heading>
-                  <Text pt="2" fontSize="sm">
-                    See a detailed analysis of all your business clients.
-                  </Text>
+                  {employee.employee_emergency_contact &&
+                    employee.employee_emergency_contact.map(
+                      (emergency_contact) => (
+                        <Box key={emergency_contact.eec_id}>
+                          <Text pt="2" fontSize="sm">
+                            {emergency_contact.eec_name}
+                          </Text>
+                          <Text pt="2" fontSize="sm">
+                            {emergency_contact.eec_relationship}
+                          </Text>
+                          <Text pt="2" fontSize="sm">
+                            {emergency_contact.eec_address}
+                          </Text>
+                          <Text pt="2" fontSize="sm">
+                            {emergency_contact.eec_phone}
+                          </Text>
+                        </Box>
+                      )
+                    )}
                 </Box>
                 <Box>
                   <Heading size="xs" textTransform="uppercase">
                     Bank
                   </Heading>
-                  <Text pt="2" fontSize="sm">
-                    See a detailed analysis of all your business clients.
-                  </Text>
+                  {employee.employee_bank && (
+                    <Box key={employee.employee_bank.eb_id}>
+                      <Text pt="2" fontSize="sm">
+                        {employee.employee_bank.eb_name}
+                      </Text>
+                      <Text pt="2" fontSize="sm">
+                        {employee.employee_bank.eb_account_no}
+                      </Text>
+                      <Text pt="2" fontSize="sm">
+                        {employee.employee_bank.eb_branch}
+                      </Text>
+                    </Box>
+                  )}
                 </Box>
               </Stack>
             </CardBody>
